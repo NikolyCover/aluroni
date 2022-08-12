@@ -2,9 +2,13 @@ import styles from "./FoodMenu.module.scss"
 import {ReactComponent as Logo} from "assets/logo.svg"
 import Searcher from "./Searcher"
 import { useState } from "react"
+import Filters from "./Filters"
+import Orderer from "./Orderer"
 
 export default function FoodMenu() {
     const [search, setSearch] = useState("")
+    const [filter, setFilter] = useState<number | null>(null)
+    const [orderer, setOrderer] = useState("")
 
     return (
         <main>
@@ -19,6 +23,10 @@ export default function FoodMenu() {
             <section className={styles.foodMenu}>
                 <h3 className={styles.foodMenu__title}>Cardápio</h3>
                 <Searcher search={search} setSearch={setSearch} />
+                <div className={styles.foodMenu__filters}>
+                    <Filters filter={filter} setFilter={setFilter}/>
+                    <Orderer orderer={orderer} setOrderer={setOrderer} />
+                </div>
             </section>
         </main>
     )
