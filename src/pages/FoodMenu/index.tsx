@@ -4,6 +4,7 @@ import Searcher from "./Searcher"
 import { useState } from "react"
 import Filters from "./Filters"
 import Orderer from "./Orderer"
+import Items from "./Items"
 
 export default function FoodMenu() {
     const [search, setSearch] = useState("")
@@ -27,6 +28,7 @@ export default function FoodMenu() {
                     <Filters filter={filter} setFilter={setFilter}/>
                     <Orderer orderer={orderer} setOrderer={setOrderer} />
                 </div>
+                <Items/>
             </section>
         </main>
     )
