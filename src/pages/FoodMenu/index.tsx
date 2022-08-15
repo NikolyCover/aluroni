@@ -28,7 +28,7 @@ export default function FoodMenu() {
                     <Filters filter={filter} setFilter={setFilter}/>
                     <Orderer orderer={orderer} setOrderer={setOrderer} />
                 </div>
-                <Items/>
+                <Items search={search} filter={filter} orderer={orderer}/>
             </section>
         </main>
     )
