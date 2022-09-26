@@ -1,7 +1,7 @@
-import foodMenu from "./items.json"
-import Item from "./Item"
+import foodMenu from './items.json'
+import Item from './Item'
 import styles from './Items.module.scss'
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 interface Props {
   search: string,
@@ -25,17 +25,17 @@ export default function Items(props: Props) {
 
   function order(newList: typeof foodMenu) {
     switch(orderer) {
-      case 'portion':
-        return newList.sort((a, b) => a.size > b.size ? 1 : -1)
+    case 'portion':
+      return newList.sort((a, b) => a.size > b.size ? 1 : -1)
 
-      case 'qtdPeople':
-        return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
+    case 'qtdPeople':
+      return newList.sort((a, b) => a.serving > b.serving ? 1 : -1)
 
-      case 'price':
-        return newList.sort((a, b) => a.price > b.price ? 1 : -1)
+    case 'price':
+      return newList.sort((a, b) => a.price > b.price ? 1 : -1)
       
-      default:
-        return newList
+    default:
+      return newList
     }
   }
 
@@ -44,14 +44,14 @@ export default function Items(props: Props) {
     setList(order(newList))
   }, [search, filter, orderer])
 
-    return (
-        <div className={styles.items}>
-          {list.map(item => (
-              <Item
-                key={item.id}
-                {...item}
-              />
-          ))}  
-        </div>
-    )
+  return (
+    <div className={styles.items}>
+      {list.map(item => (
+        <Item
+          key={item.id}
+          {...item}
+        />
+      ))}  
+    </div>
+  )
 }

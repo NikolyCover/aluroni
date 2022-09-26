@@ -11,19 +11,19 @@ interface Props {
 }
 
 export default function Filters({filter, setFilter}: Props) {
-    const selectFilter = useCallback((option: IOption) => {
-        setFilter(currentFilter => currentFilter === option.id ? null : option.id)
-    }, [])
+  const selectFilter = useCallback((option: IOption) => {
+    setFilter(currentFilter => currentFilter === option.id ? null : option.id)
+  }, [])
 
 
-    return <div className={styles.filters}>
-        {filters.map((option) => (
-            <button className={classNames({
-                [styles.filters__filter]: true, 
-                [styles['filters__filter--active']]: filter === option.id
-            })} key={option.id} onClick={() => selectFilter(option)}>
-                {option.label}
-            </button>
-        ))}
-    </div>
+  return <div className={styles.filters}>
+    {filters.map((option) => (
+      <button className={classNames({
+        [styles.filters__filter]: true, 
+        [styles['filters__filter--active']]: filter === option.id
+      })} key={option.id} onClick={() => selectFilter(option)}>
+        {option.label}
+      </button>
+    ))}
+  </div>
 }
