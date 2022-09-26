@@ -1,4 +1,4 @@
-import foodMenu from './items.json'
+import foodMenu from 'data/foodMenu.json'
 import Item from './Item'
 import styles from './Items.module.scss'
 import { useEffect, useState } from 'react'
