@@ -1,4 +1,6 @@
 import styles from './DefaultPage.module.scss'
+import stylesTheme from 'styles/Theme.module.scss'
+
 import { Outlet } from 'react-router-dom' //children from react router dom
 
 export default function DefaultPage() {
@@ -7,7 +9,7 @@ export default function DefaultPage() {
       <header className={styles.header}>
         <div className={styles.header__text}>A casa do código e da massa</div>
       </header>
-      <div>
+      <div className={stylesTheme.container}>
         <Outlet />
       </div>
     </>

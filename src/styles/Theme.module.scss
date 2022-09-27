@@ -1,0 +1,20 @@
+@import "./variables";
+@import "./breakpoints";
+
+.container {
+  padding: 50px $padding-horizontally;
+  @media (max-width: $desktop_xsm) {
+    padding: 50px $padding-horizontally-mobile;
+  }
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 50px $padding-horizontally-sm;
+  }
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 50px $padding-horizontally-md;
+  }
+}
+.title {
+  color: $dark;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}

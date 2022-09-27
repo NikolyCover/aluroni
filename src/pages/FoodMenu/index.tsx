@@ -1,4 +1,6 @@
 import styles from './FoodMenu.module.scss'
+import stylesTheme from 'styles/Theme.module.scss'
+
 import Searcher from './Searcher'
 import { useState } from 'react'
 import Filters from './Filters'
@@ -12,7 +14,7 @@ export default function FoodMenu() {
 
   return (
     <section className={styles.foodMenu}>
-      <h3 className={styles.foodMenu__title}>Cardápio</h3>
+      <h3 className={stylesTheme.title}>Cardápio</h3>
       <Searcher search={search} setSearch={setSearch} />
       <div className={styles.foodMenu__filters}>
         <Filters filter={filter} setFilter={setFilter}/>
